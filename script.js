@@ -24,6 +24,10 @@ const getValue = (event) => {
     finalTipValue = tipValue;
   }
 
+  if (customTipValue === 0) {
+    finalTipValue = 0;
+  }
+
   totalBillValue = String(
     ((billValue * finalTipValue + billValue) / peopleValue).toFixed(2)
   ).padStart(2, 0);
@@ -92,6 +96,10 @@ const setValues = (event) => {
     finalTipValue = tipValue;
   }
 
+  if (customTipValue === 0) {
+    finalTipValue = 0;
+  }
+
   totalBillValue = String(
     ((billValue * finalTipValue + billValue) / peopleValue).toFixed(2)
   ).padStart(2, 0);
@@ -109,7 +117,7 @@ const setValues = (event) => {
 
   if (peopleValue) {
     peopleError.classList.remove("active");
-    peopleInput.classList.remove("active");
+    peopleInput.classList.remove("error-active");
   } else {
     peopleError.classList.add("active");
     peopleInput.classList.add("error-active");
@@ -138,6 +146,10 @@ const handleCustomTip = (event) => {
     finalTipValue = "";
   }
 
+  if (customTipValue === 0) {
+    finalTipValue = 0;
+  }
+
   totalBillValue = String(
     ((billValue * finalTipValue + billValue) / peopleValue).toFixed(2)
   ).padStart(2, 0);
@@ -145,7 +157,7 @@ const handleCustomTip = (event) => {
     ((billValue * finalTipValue) / peopleValue).toFixed(2).padStart(2, 0)
   );
 
-  if (billValue && finalTipValue && peopleValue) {
+  if (billValue && peopleValue) {
     totalBill.innerText = `$${totalBillValue}`;
     tipAmount.innerText = `$${totalTipValue}`;
   } else {
