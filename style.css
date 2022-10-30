@@ -1,0 +1,271 @@
+:root {
+  --strong-cyan: hsl(172, 67%, 45%);
+  --very-dark-cyan: hsl(183, 100%, 15%);
+  --dark-grayish-cyan: hsl(186, 14%, 43%);
+  --grayish-cyan: hsl(184, 14%, 56%);
+  --light-grayish-cyan: hsl(185, 41%, 84%);
+  --very-light-grayish-cyan: hsl(189, 41%, 97%);
+  --white: hsl(0, 0%, 100%);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  max-width: 100%;
+  background-color: var(--light-grayish-cyan);
+  font-family: "Space Mono", monospace;
+  color: var(--very-dark-cyan);
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title h1 {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  line-height: 1.5;
+  margin-bottom: 85px;
+}
+
+main {
+  background: var(--white);
+  padding: 30px;
+  border-radius: 24px;
+  display: flex;
+  max-width: 900px;
+  gap: 50px;
+  margin: 0 auto;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.1);
+}
+
+input {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: end;
+  padding: 10px;
+  font-size: 1.5rem;
+  font-family: inherit;
+  color: inherit;
+  background-color: var(--very-light-grayish-cyan);
+  border-radius: 6px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+input:focus {
+  outline-color: var(--strong-cyan);
+}
+
+input:hover {
+  border-color: rgba(38, 192, 171, 0.5);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+section {
+  max-width: 415px;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.h2 {
+  color: var(--dark-grayish-cyan);
+  margin-bottom: 10px;
+}
+
+.bill-amount div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bill-input.error-active {
+  border-color: tomato;
+}
+
+.bill-label {
+  display: block;
+  position: relative;
+}
+
+.bill-input {
+  margin-bottom: 45px;
+}
+
+.icon::before {
+  content: "";
+  display: block;
+  background-image: url("./images/icon-dollar.svg");
+  background-repeat: no-repeat;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 46px;
+  right: 10px;
+}
+
+.tip {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 45px;
+}
+
+.tip h2 {
+  grid-column: 1 / -1;
+}
+
+.custom-tip {
+  display: inline-block;
+}
+
+.tip-input::placeholder {
+  text-align: center;
+}
+
+button {
+  font-size: 1.5rem;
+  padding: 10px 0px;
+  box-sizing: border-box;
+  background-color: var(--very-dark-cyan);
+  color: var(--white);
+  font-family: inherit;
+  border: none;
+  border-radius: 6px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.tip button:hover,
+.btn:hover {
+  background-color: #92dfd5;
+  color: var(--very-dark-cyan);
+}
+
+button.active {
+  background-color: #92dfd5;
+  color: var(--very-dark-cyan);
+}
+
+.people div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.people-title {
+  display: inline-block;
+  position: relative;
+}
+
+.error {
+  display: none;
+}
+
+.error.active {
+  color: tomato;
+  display: inline-block;
+}
+
+.people-input.error-active {
+  border-color: tomato;
+}
+
+.people .icon::before {
+  background-image: url("./images/icon-person.svg");
+  position: absolute;
+  left: 15px;
+}
+
+section + section {
+  background-color: var(--very-dark-cyan);
+  color: white;
+  padding: 60px 40px 40px 40px;
+  border-radius: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+}
+
+.total h2 {
+  word-break: no;
+}
+
+.total span {
+  font-size: 3rem;
+  color: var(--strong-cyan);
+}
+
+.total p {
+  font-size: 0.75rem;
+  margin-top: 10px;
+  color: var(--grayish-cyan);
+}
+
+.btn {
+  width: 100%;
+  align-self: flex-end;
+  margin-top: auto;
+  background-color: var(--strong-cyan);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  color: var(--very-dark-cyan);
+  letter-spacing: 1.4px;
+}
+
+.btn:disabled {
+  background-color: #195b5e;
+}
+
+@media (max-width: 825px) {
+  main {
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 24px 24px 0 0;
+  }
+
+  section + section {
+    padding: 30px 20px 20px 20px;
+  }
+
+  .title h1 {
+    margin-top: 50px;
+  }
+
+  .bill {
+    margin-bottom: 30px;
+  }
+
+  .h2,
+  .error {
+    font-size: 0.75rem;
+  }
+
+  .icon::before {
+    left: 15px;
+    top: 42.5px;
+  }
+}
