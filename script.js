@@ -43,7 +43,7 @@ const getValue = (event) => {
     billInput.classList.add("error-active");
   }
 
-  if (billValue && finalTipValue && peopleValue) {
+  if (billValue && peopleValue) {
     totalBill.innerText = `$${totalBillValue}`;
     tipAmount.innerText = `$${totalTipValue}`;
   } else {
